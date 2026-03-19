@@ -61,3 +61,16 @@ genero = st.sidebar.selectbox("Género",["Todos", "Female", "Male"])
 if genero == "Female":df = df[df["gender"] == 0]
 elif genero == "Male":df = df[df["gender"] == 1]
 #-------
+
+st.header("Hallazgos")
+
+st.write("""1. Los pacientes con mayor nivel de glucosa tienen mayor probabilidad
+de diagnóstico positivo de diabetes.
+2. El BMI alto está asociado con mayor riesgo.
+3. La edad también influye en el incremento del riesgo.""")
+#-------
+
+st.header("Recomendaciones")
+
+st.write("""- Implementar programas de prevención enfocados en control del peso.
+- Promover chequeos de glucosa periódicos en población de riesgo.""")

@@ -6,21 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-#icono de página
-icono = Image.open("Icono_diabetes.png")
-
-##Configurar nombre de pagina
-st.set_page_config(page_title="Mi APP_Diabetes", page_icon=icono, layout="wide")
-
-##navegacion
-pg=st.navigation(["0_inicio.py","1_genero.py","2_edad.py","5_Mapa_Calor.py"])
-pg.run()
-
-
-def main():
-        st.sidebar.header("Genero de los pacientes")
-    
-    #cargar dataset
+ #cargar dataset
 def cargar_datos():
     df = pd.read_csv('diabetes_risk_dataset.csv')
     df.columns = df.columns.str.strip()
@@ -28,3 +14,6 @@ def cargar_datos():
     return df
 df=cargar_datos()
 
+
+fig = go.Figure(data=go.Heatmap(z=df.corr(numeric_only=True)), x=df[["edad","IMC","Presión Arterial"]], y=df[["edad","IMC","Presión Arterial"]], colorscale='Viridis')
+st.plotly_chart(fig, width=800)

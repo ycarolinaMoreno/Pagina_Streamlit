@@ -17,6 +17,12 @@ st.sidebar.header("Información general")
 st.markdown("<h1 style='color:blue;'>Predicción de la Diabetes</h1>", unsafe_allow_html=True)
 st.write("La diabetes es una condición crónica que afecta la forma en que el cuerpo utiliza la glucosa, su principal fuente de energía. Existen diferentes tipos de diabetes, y cada uno requiere cuidados especiales para mantener una buena calidad de vida. El objetivo de esta página es brindar información básica, fomentar la conciencia sobre la importancia de la prevención y promover hábitos saludables que ayuden a controlar la enfermedad.")
 
+
+
+with open("ReflexivoDiabetes.mp4", "rb") as video_file:
+    st.video(video_file.read(), start_time=0)
+
+
  #cargar dataset
 def cargar_datos():
     df = pd.read_csv('diabetes_risk_dataset.csv')

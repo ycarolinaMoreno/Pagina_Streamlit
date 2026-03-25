@@ -14,6 +14,23 @@ def cargar_datos():
     return df
 df=cargar_datos()
 
+df['Genero'] = df['Genero'].replace({
+        'Male': 'Hombre',
+        'Female': 'Mujer'
+    })
+
+df['Nivel de actividad fisica'] = df['Nivel de actividad fisica'].replace({
+        'Low': 'Bajo',
+        'Moderate': 'Moderado',
+        'High': 'Alto'
+    })
+
+df['Historial Familiar'] = df['Historial Familiar'].replace({
+        'Yes': 'Si',
+        'No': 'No'
+    })
+    
+
 ## Mostrar la tabla completa
 st.dataframe(df)
 

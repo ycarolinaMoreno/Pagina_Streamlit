@@ -13,7 +13,10 @@ def cargar_datos():
     df.rename(columns={'age': 'edad', 'gender': 'Genero', 'bmi': 'IMC', 'blood_pressure': 'Presión Arterial', 'fasting_glucose_level': 'Glucosa en ayunas', 'insulin_level': 'Nivel de insulina', 'HbA1c_level': 'Nivel de insulina Glicosilada', 'cholesterol_level': 'Nivel de colesterol', 'triglycerides_level': 'Nivel de trigliceridos', 'physical_activity_level': 'Nivel de actividad fisica', 'daily_calorie_intake': 'Ingesta diaria de caloria', 'sugar_intake_grams_per_day': 'Ingesta de azucar g/dia', 'sleep_hours': 'Horas de sueño', 'stress_level':'Nivel de estres', 'family_history_diabetes': 'Historial Familiar', 'waist_circumference_cm': 'Circunferencia de cintura cm', 'diabetes_risk_score': 'Puntuacion de riesgo', 'diabetes_risk_category': 'Categoria de riesgo'}, inplace=True)
     return df
 df=cargar_datos()
+columns_to_plot = ["edad", "IMC", "Presión Arterial", "Glucosa en ayunas", "Nivel de insulina", "Nivel de insulina Glicosilada", "Nivel de colesterol", "Nivel de trigliceridos", "Nivel de actividad fisica", "Ingesta diaria de caloria", "Ingesta de azucar g/dia", "Horas de sueño", "Nivel de estres", "Circunferencia de cintura cm"
+                ]
+matriz_correlacion = df[columns_to_plot].corr(numeric_only=True)
 
 
-fig = go.Figure(data=go.Heatmap(z=df.corr(numeric_only=True)), x=df[["edad","IMC","Presión Arterial"]], y=df[["edad","IMC","Presión Arterial"]], colorscale='Viridis')
-st.plotly_chart(fig, width=800)
+fig = go.Figure(data=go.Heatmap(z=matriz_correlacion.values, x=columns_to_plot, y=columns_to_plot, colorscale='Viridis'))
+st.plotly_chart(fig)

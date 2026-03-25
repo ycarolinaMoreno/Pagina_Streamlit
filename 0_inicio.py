@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import matplotlib.pyplot as plt
+
 
 #icono de página
 icono = Image.open("Icono_diabetes.png")
@@ -16,6 +16,12 @@ st.set_page_config(page_title="Mi APP_Diabetes", page_icon=icono, layout="wide")
 st.sidebar.header("Información general")
 st.markdown("<h1 style='color:blue;'>Predicción de la Diabetes</h1>", unsafe_allow_html=True)
 st.write("La diabetes es una condición crónica que afecta la forma en que el cuerpo utiliza la glucosa, su principal fuente de energía. Existen diferentes tipos de diabetes, y cada uno requiere cuidados especiales para mantener una buena calidad de vida. El objetivo de esta página es brindar información básica, fomentar la conciencia sobre la importancia de la prevención y promover hábitos saludables que ayuden a controlar la enfermedad.")
+
+
+
+with open("ReflexivoDiabetes.mp4", "rb") as video_file:
+    st.video(video_file.read(), start_time=0)
+
 
  #cargar dataset
 def cargar_datos():

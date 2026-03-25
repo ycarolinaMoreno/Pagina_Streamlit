@@ -14,6 +14,6 @@ def cargar_datos():
     return df
 df=cargar_datos()
 
-df_cuenta = df.groupby('Genero').count().reset_index()
-fig = px.pie(df_cuenta, names='Genero', values='Patient_ID', title='Distribución de Género de los Pacientes')
+
+fig = go.Figure(data=go.Heatmap(z=df.corr(numeric_only=True)), x=df[["edad","IMC","Presión Arterial"]], y=df[["edad","IMC","Presión Arterial"]], colorscale='Viridis')
 st.plotly_chart(fig, width=800)

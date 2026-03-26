@@ -13,8 +13,16 @@ icono = Image.open("Icono_diabetes.png")
 st.set_page_config(page_title="Mi APP_Diabetes", page_icon=icono, layout="wide")
 
 ##navegacion
-pg=st.navigation(["0_Inicio.py","1_Genero.py","2_Edad.py", "3_Tablas.py", "4_Calculadora_Riesgo.py", "5_Mapa_Calor.py", "6_Conclusiones.py"])
-pg.run()
+pages = [
+      st.Page("0_Inicio.py", title="Inicio"),
+      st.Page("1_Genero.py", title="Genero"),
+      st.Page("2_Edad.py", title="Edad"),
+      st.Page("3_Tablas.py", title="Tablas"),
+      st.Page("4_Calculadora_Riesgo.py", title="Calculadora de Riesgo"),
+      st.Page("5_Mapa_Calor.py", title="Mapa de Calor")
+]
+pg=st.navigation(pages)
+pg.run()##navegacion
 
 
 def main():

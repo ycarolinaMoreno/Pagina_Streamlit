@@ -19,7 +19,9 @@ pages = [
       st.Page("2_Edad.py", title="Edad"),
       st.Page("3_Tablas.py", title="Tablas"),
       st.Page("4_Calculadora_Riesgo.py", title="Calculadora de Riesgo"),
-      st.Page("5_Mapa_Calor.py", title="Mapa de Calor")
+      st.Page("5_Mapa_Calor.py", title="Mapa de Calor"),
+      st.Page("6_IMC.py", title="IMC"),
+      st.Page("7_Conclusiones.py", title="Conclusiones")
 ]
 pg=st.navigation(pages)
 pg.run()##navegacion

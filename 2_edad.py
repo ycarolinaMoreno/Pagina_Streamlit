@@ -18,6 +18,8 @@ df['Categoria de riesgo'] = df['Categoria de riesgo'].replace({
         'Low Risk': 'Bajo riesgo',
         'High Risk': 'Alto riesgo'
     })
+st.markdown("<h1 style='color:blue;'>Análisis de Edad y Riesgo de Diabetes</h1>", unsafe_allow_html=True)
+st.write("""En esta sección se analiza la relación entre la edad de los pacientes y su riesgo de desarrollar diabetes. Se observa que a medida que aumenta la edad, también lo hace el riesgo, lo que sugiere que la edad es un factor importante a considerar en la prevención y manejo de la diabetes.""")
 
 ## Riesgo por edad
 df_avg = df.groupby('Categoria de riesgo')['edad'].mean().reset_index()

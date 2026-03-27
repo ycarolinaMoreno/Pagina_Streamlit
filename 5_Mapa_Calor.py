@@ -7,9 +7,7 @@ import plotly.graph_objects as go
 
 st.markdown("<h1 style='color:blue;'>Mapa de calor</h1>", unsafe_allow_html=True)
 
-st.write("""Este proyecto analiza un dataset de factores de riesgo de diabetes
-como edad, IMC, presión arterial y glucosa para identificar patrones
-asociados al riesgo de desarrollar la enfermedad.
+st.write("""“Mapa de calor que muestra la relación entre distintos factores de riesgo —como edad, IMC, presión arterial, glucosa, colesterol, triglicéridos, actividad física y hábitos de sueño— y su asociación con la probabilidad de desarrollar diabetes. Los colores indican la intensidad de la correlación: valores más altos reflejan una mayor influencia en el riesgo.”.
 """)
  #cargar dataset
 def cargar_datos():

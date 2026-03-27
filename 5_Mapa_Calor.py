@@ -4,6 +4,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import numpy as np
+
 
 st.markdown("<h1 style='color:blue;'>Mapa de calor</h1>", unsafe_allow_html=True)
 
@@ -23,3 +25,32 @@ matriz_correlacion = df[columns_to_plot].corr(numeric_only=True)
 
 fig = go.Figure(data=go.Heatmap(z=matriz_correlacion.values, x=columns_to_plot, y=columns_to_plot, colorscale='Viridis'))
 st.plotly_chart(fig)
+
+
+
+# Ajuste lineal: y = m*x + b
+m, b = np.polyfit(df["IMC"], df["Puntuacion de riesgo"], 1)
+
+# Crear figura con puntos
+fig = go.Figure(data=go.Scatter(
+    x=df["IMC"], 
+    y=df["Puntuacion de riesgo"], 
+    mode='markers',
+    name="Datos"
+))
+
+# Añadir línea de regresión
+fig.add_trace(go.Scatter(
+    x=[df["IMC"].min(), df["IMC"].max()],
+    y=[m*df["IMC"].min()+b, m*df["IMC"].max()+b],
+    line=dict(color='red'),
+    name="Tendencia"
+))
+
+fig.update_layout(
+    title="Relación Médica: IMC vs Puntuación de Riesgo",
+    xaxis_title="IMC",
+    yaxis_title="Puntuación de Riesgo"
+)
+
+st.plotly_chart(fig, width=800)

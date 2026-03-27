@@ -5,7 +5,12 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
+st.markdown("<h1 style='color:blue;'>Mapa de calor</h1>", unsafe_allow_html=True)
 
+st.write("""Este proyecto analiza un dataset de factores de riesgo de diabetes
+como edad, IMC, presión arterial y glucosa para identificar patrones
+asociados al riesgo de desarrollar la enfermedad.
+""")
  #cargar dataset
 def cargar_datos():
     df = pd.read_csv('diabetes_risk_dataset.csv')

@@ -37,12 +37,5 @@ especiales para mantener una buena calidad de vida.<br><br>
 with open("ReflexivoDiabetes.mp4", "rb") as video_file:
     st.video(video_file.read(), start_time=0)
 
-## Separador visual
-st.header("Objetivos")
 
-st.write("""- Analizar factores de riesgo asociados a la diabetes.
-- Identificar patrones en variables como edad, glucosa y BMI.
-- Visualizar tendencias y distribución de los datos.
-""")
-##Seccion de genero de los pacientes
 

@@ -13,14 +13,14 @@ st.set_page_config(page_title="Mi APP_Diabetes", page_icon=icono, layout="wide")
 
 ##navegacion
 pages = [
-      st.Page("0_Inicio.py", title="Inicio"),
-      st.Page("1_Genero.py", title="Genero"),
-      st.Page("2_Edad.py", title="Edad"),
-      st.Page("3_Tablas.py", title="Tablas"),
-      st.Page("4_Calculadora_Riesgo.py", title="Calculadora de Riesgo"),
-      st.Page("5_Mapa_Calor.py", title="Mapa de Calor"),
-      st.Page("6_IMC.py", title="IMC"),
-      st.Page("7_Conclusiones.py", title="Conclusiones")
+      st.Page("./0_Inicio.py", title="Inicio"),
+      st.Page("./1_Genero.py", title="Genero"),
+      st.Page("./2_Edad.py", title="Edad"),
+      st.Page("./3_Tablas.py", title="Tablas"),
+      st.Page("./4_Calculadora_Riesgo.py", title="Calculadora de Riesgo"),
+      st.Page("./5_Mapa_Calor.py", title="Mapa de Calor"),
+      st.Page("./6_IMC.py", title="IMC"),
+      st.Page("./7_Conclusiones.py", title="Conclusiones")
 ]
 pg=st.navigation(pages)
 pg.run()##navegacion

@@ -27,29 +27,4 @@ st.plotly_chart(fig)
 
 
 
-# Ajuste lineal: y = m*x + b
-m, b = np.polyfit(df["IMC"], df["Puntuacion de riesgo"], 1)
 
-# Crear figura con puntos
-fig = go.Figure(data=go.Scatter(
-    x=df["IMC"], 
-    y=df["Puntuacion de riesgo"], 
-    mode='markers',
-    name="Datos"
-))
-
-# Añadir línea de regresión
-fig.add_trace(go.Scatter(
-    x=[df["IMC"].min(), df["IMC"].max()],
-    y=[m*df["IMC"].min()+b, m*df["IMC"].max()+b],
-    line=dict(color='red'),
-    name="Tendencia"
-))
-
-fig.update_layout(
-    title="Relación Médica: IMC vs Puntuación de Riesgo",
-    xaxis_title="IMC",
-    yaxis_title="Puntuación de Riesgo"
-)
-
-st.plotly_chart(fig, width=800)

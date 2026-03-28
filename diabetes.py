@@ -3,24 +3,34 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-
+import os
 
 #icono de página
 icono = Image.open("Icono_diabetes.png")
 
 ##Configurar nombre de pagina
 st.set_page_config(page_title="Mi APP_Diabetes", page_icon=icono, layout="wide")
+# Esto obtiene la carpeta donde está guardado diabetes.py
+current_dir = os.path.dirname(__file__)
+path_a_inicio = os.path.join(current_dir, "0_Inicio.py")
+path_a_genero = os.path.join(current_dir, "1_Genero.py")
+path_a_edad = os.path.join(current_dir, "2_Edad.py")
+path_a_tablas = os.path.join(current_dir, "3_Tablas.py")
+path_a_calculadora = os.path.join(current_dir, "4_Calculadora_Riesgo.py")
+path_a_mapa_calor = os.path.join(current_dir, "5_Mapa_Calor.py")
+path_a_imc = os.path.join(current_dir, "6_IMC.py") 
+path_a_conclusiones = os.path.join(current_dir, "7_Conclusiones.py")
 
 ##navegacion
 pages = [
-      st.Page("./0_Inicio.py", title="Inicio"),
-      st.Page("./1_Genero.py", title="Genero"),
-      st.Page("./2_Edad.py", title="Edad"),
-      st.Page("./3_Tablas.py", title="Tablas"),
-      st.Page("./4_Calculadora_Riesgo.py", title="Calculadora de Riesgo"),
-      st.Page("./5_Mapa_Calor.py", title="Mapa de Calor"),
-      st.Page("./6_IMC.py", title="IMC"),
-      st.Page("./7_Conclusiones.py", title="Conclusiones")
+      st.Page(path_a_inicio, title="Inicio"),
+      st.Page(path_a_genero, title="Genero"),
+      st.Page(path_a_edad, title="Edad"),
+      st.Page(path_a_tablas, title="Tablas"),
+      st.Page(path_a_calculadora, title="Calculadora de Riesgo"),
+      st.Page(path_a_mapa_calor, title="Mapa de Calor"),
+      st.Page(path_a_imc, title="IMC"),
+      st.Page(path_a_conclusiones, title="Conclusiones")
 ]
 pg=st.navigation(pages)
 pg.run()##navegacion

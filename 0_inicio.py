@@ -20,13 +20,6 @@ st.markdown("<h1 style='color:blue;'>Predicción de la Diabetes</h1>", unsafe_al
 
 # 🔷 DESCRIPCIÓN EN CAJA VISUAL
 st.markdown("""
-<div style="
-    background-color: #F4F6F7;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 6px solid #2E86C1;
-    font-size: 16px;
-">
 La <b>diabetes</b> es una condición crónica que afecta la forma en que el cuerpo utiliza la glucosa, 
 su principal fuente de energía. Existen diferentes tipos de diabetes, y cada uno requiere cuidados 
 especiales para mantener una buena calidad de vida.<br><br>
